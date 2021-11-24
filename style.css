@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 62.5%;
+}
+
+.header__title {
+  font-size: 5rem;
+  text-align: center;
+}
+
+.game__container {
+  height: 100vh;
+  background-color: yellowgreen;
+  display: flex;
+  gap: 2rem;
+}
+
+.game__map {
+  margin: 0 auto;
+  height: 50rem;
+  width: 50rem;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 5rem;
+  flex-basis: 50%;
+  flex-grow: 0;
+}
+
+.game__map-field {
+  background-color: #ddd;
+  border: #fff solid 2px;
+  border-radius: 5px;
+}
+
+.game__score-player1,
+.game__score-player2 {
+  flex-basis: 25%;
+  flex-grow: 0;
+  background-color: orangered;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.game__map-player-1 {
+  background-color: blue;
+}
+
+.game__map-player-2 {
+  background-color: green;
+}
+
+.game__map-won {
+  background-color: aqua;
+}
