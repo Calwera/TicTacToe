@@ -19,20 +19,20 @@ const arrWiningCombinations = [
 mapField.forEach((ele) => {
   ele.addEventListener("click", function () {
     if (
-      !(
-        ele.classList.contains("game__map-player-1") ||
-        ele.classList.contains("game__map-player-2")
-      )
+      //do poprawki blad z playerem 2
+      !ele.classList.contains(`game__map-player-${activePlayer}`) &&
+      activePlayer !== 0
     )
-      if (activePlayer == 1) {
-        ele.classList.add("game__map-player-1");
-        checkScore(1);
+      ele.classList.add(`game__map-player-${activePlayer}`);
+    if (checkScore(activePlayer) || activePlayer === 0) {
+      activePlayer = 0;
+    } else {
+      if (activePlayer === 1) {
         activePlayer = 2;
       } else {
-        ele.classList.add("game__map-player-2");
-        checkScore(2);
         activePlayer = 1;
       }
+    }
   });
 });
 
@@ -44,9 +44,25 @@ const checkScore = function (player) {
       arrScore.push(id + 1);
     }
   });
-  let z;
+
+  // let z = arrWiningCombinations.some((ele) => {
+  //   ele.every((element, id, tab) => {
+  //     return element === arrScore[id];
+  //   }) == true;
+  // });
+
+  // console.log(
+  //   arrWiningCombinations.some((ele) => {
+  //     ele.some((element, id, tab) => {
+  //       return element === arrScore[id];
+  //     }) === true;
+  //   })
+  // );
+
+  let d = false;
 
   arrWiningCombinations.forEach((ele) => {
+    let z;
     z = ele.every((element, id, tab) => {
       return element === arrScore[id];
     });
@@ -54,15 +70,8 @@ const checkScore = function (player) {
       ele.forEach((field) => {
         mapField[field - 1].classList.add("game__map-won");
       });
-      mapField.forEach((ele) => {
-        ele.removeQue;
-      });
-      mapField.forEach((ele) => {
-        ele.removeEventListeners();
-        // ele.classList.remove(`game__map-player-${player}`);
-        // ele.classList.remove("game__map-won");
-        // arrScore = [];
-      });
+      d = z;
     }
   });
+  return d;
 };
