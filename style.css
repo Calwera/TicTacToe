@@ -14,8 +14,8 @@ body {
 }
 
 .game__container {
-  height: 100vh;
-  background-color: yellowgreen;
+  height: 88vh;
+
   display: flex;
   gap: 2rem;
 }
@@ -27,7 +27,7 @@ body {
   background-color: #fff;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 5rem;
+  /* padding: 5rem; */
   flex-basis: 50%;
   flex-grow: 0;
 }
@@ -36,25 +36,77 @@ body {
   background-color: #ddd;
   border: #fff solid 2px;
   border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-.game__score-player1,
-.game__score-player2 {
+.game__score-player {
   flex-basis: 25%;
   flex-grow: 0;
-  background-color: orangered;
+
   margin: 0 auto;
   text-align: center;
 }
 
 .game__map-player-1 {
-  background-color: blue;
+  background-image: url(./svg/circle.svg);
+  background-size: cover;
+  background-color: #1ac8ed;
 }
 
 .game__map-player-2 {
-  background-color: green;
+  background-image: url(./svg/x.svg);
+  background-size: cover;
+  background-color: #8c2155;
 }
 
 .game__map-won {
-  background-color: aqua;
+  background-color: #0c8346;
+}
+
+.player-1 {
+  position: relative;
+  display: flex;
+  background-color: #aed4e6;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.player-2 {
+  position: relative;
+  display: flex;
+  background-color: #af7595;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+.player-1 span,
+.player-2 span {
+  align-items: center;
+  font-size: 5rem;
+  display: block;
+  padding: 20px;
+  margin: auto 0;
+  color: #fff;
+}
+
+.player-1.player-active {
+  background-color: #1ac8ed;
+}
+
+.player-2.player-active {
+  background-color: #8c2155;
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 5rem;
+  width: 10rem;
+  transform: translate(-50%, -50%);
+  border: none;
+  text-decoration: none;
+  color: #fff;
+  background-color: blueviolet;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: none;
 }

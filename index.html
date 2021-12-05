@@ -12,9 +12,12 @@
     <header class="header__section">
       <h2 class="header__title">Tic Tac Toe</h2>
     </header>
+
     <section class="game__section">
       <div class="game__container">
-        <div class="game__score-player1 player-active">1</div>
+        <div class="game__score-player player-active player-1">
+          <span>GRACZ 1 </span><button class="btn">Grasz ponownie?</button>
+        </div>
 
         <div class="game__map">
           <div class="game__map-field">&nbsp;</div>
@@ -28,7 +31,9 @@
           <div class="game__map-field">&nbsp;</div>
         </div>
 
-        <div class="game__score-player2">0</div>
+        <div class="game__score-player player-2">
+          <span>GRACZ 2</span> <button class="btn">Grasz ponownie?</button>
+        </div>
       </div>
     </section>
     <script src="script.js"></script>
