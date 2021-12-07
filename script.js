@@ -48,6 +48,10 @@ const checkScore = function (player) {
       arrScore.push(id + 1);
     }
   });
+  if (arrScore.length === 5) {
+    button[0].style.display = "block";
+    button[1].style.display = "block";
+  }
 
   let conditionToWin = false;
 
@@ -82,6 +86,8 @@ const checkScore = function (player) {
 const startState = function () {
   button.forEach((btn) => (btn.style.display = "none"));
   activePlayer = 1;
+  player[0].classList.add("player-active");
+  player[1].classList.remove("player-active");
   mapField.forEach((field) => {
     field.classList.remove("game__map-player-1");
     field.classList.remove("game__map-player-2");
